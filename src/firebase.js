@@ -7,13 +7,13 @@ import { getStorage } from 'firebase/storage';
 
 
 const firebaseConfig = {
- apiKey: "AIzaSyDf7SgaE0xfSIkbl4-T8MDdmo0fStX5GOM",
-  authDomain: "e-commerce-9f32f.firebaseapp.com",
-  projectId: "e-commerce-9f32f",
-  storageBucket: "e-commerce-9f32f.firebasestorage.app",
-  messagingSenderId: "291874462803",
-  appId: "1:291874462803:web:ef4477d95e7497e82ebaa6",
-  measurementId: "G-0029KHGLF4"
+  apiKey: "AIzaSyDjy-cear3Fs_tLULDEMLHk4hhC4iEzveE",
+  authDomain: "rose-bloom-dac9e.firebaseapp.com",
+  projectId: "rose-bloom-dac9e",
+  storageBucket: "rose-bloom-dac9e.firebasestorage.app",
+  messagingSenderId: "867328423143",
+  appId: "1:867328423143:web:55702afc68425d71155e42",
+  measurementId: "G-7644VW50RZ"
 };
 
 const app = initializeApp(firebaseConfig);

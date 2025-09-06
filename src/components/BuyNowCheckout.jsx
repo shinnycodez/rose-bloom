@@ -46,8 +46,23 @@ const BuyNowCheckout = () => {
     }
   }, []);
 
+  // Calculate shipping cost based on city
+  const getShippingCost = (city) => {
+    if (!city) return 280; // Default to higher rate if no city selected
+    
+    const cityLower = city.toLowerCase().trim();
+    
+    // Rawalpindi and Islamabad get lower shipping rate
+    if (cityLower === 'rawalpindi' || cityLower === 'islamabad') {
+      return 220;
+    }
+    
+    // Rest of Pakistan
+    return 280;
+  };
+
   const subtotal = cartItems.reduce((sum, item) => sum + item.price * (item.quantity || 1), 0);
-  const shippingCost = 230;
+  const shippingCost = getShippingCost(form.city);
   const total = subtotal + shippingCost;
 
   const handleChange = (e) => {
@@ -321,9 +336,18 @@ const BuyNowCheckout = () => {
                       name="city" 
                       value={form.city}
                       onChange={handleChange}
+                      placeholder="e.g., Rawalpindi, Islamabad, Lahore"
                       className={`w-full px-4 py-2 border ${errors.city ? 'border-red-500' : 'border-gray-300'} rounded-md focus:ring-black focus:border-black text-sm sm:text-base`}
                     />
                     {errors.city && <p className="mt-1 text-sm text-red-600">{errors.city}</p>}
+                    {form.city && (
+                      <p className="mt-1 text-xs text-gray-500">
+                        Shipping: PKR {getShippingCost(form.city)}
+                        {(form.city.toLowerCase() === 'rawalpindi' || form.city.toLowerCase() === 'islamabad') && 
+                          ' (Special rate for Rawalpindi/Islamabad)'
+                        }
+                      </p>
+                    )}
                   </div>
 
                   <div>
@@ -384,7 +408,10 @@ const BuyNowCheckout = () => {
                   <div className="ml-3">
                     <p className="font-medium text-gray-900 text-sm sm:text-base">Standard Delivery</p>
                     <p className="text-xs sm:text-sm text-gray-500">
-                      PKR 230 - Delivery in 4-5 business days
+                      PKR {shippingCost} - Delivery in 4-5 business days
+                      {(form.city.toLowerCase() === 'rawalpindi' || form.city.toLowerCase() === 'islamabad') && 
+                        ' (Special rate for twin cities)'
+                      }
                     </p>
                   </div>
                 </label>
@@ -427,8 +454,8 @@ const BuyNowCheckout = () => {
                     Please send the total amount of PKR {total.toLocaleString()} to our EasyPaisa account:
                   </p>
                   <ul className="list-disc list-inside text-gray-800 mb-4 text-sm sm:text-base">
-                    <li><strong>Account Name:</strong> Maham </li>
-                    <li><strong>EasyPaisa Number:</strong> 03105816903</li>
+                    <li><strong>Account Name:</strong> Areeba Areej </li>
+                    <li><strong>EasyPaisa Number:</strong> 03305089910</li>
                   </ul>
                   <p className="text-gray-700 mb-4 text-sm sm:text-base">
                     After making the payment, please upload a screenshot of the transaction as proof of payment.

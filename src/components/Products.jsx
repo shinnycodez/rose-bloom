@@ -32,7 +32,7 @@ function Products() {
 
   return (
     <div
-      className="relative flex size-full min-h-screen flex-col bg-[#FFF5EE] group/design-root overflow-x-hidden"
+      className="relative flex size-full min-h-screen flex-col bg-[#F3D0D7] group/design-root overflow-x-hidden"
       style={{ fontFamily: '"Noto Serif", "Noto Sans", sans-serif' }}
     >
       <div className="layout-container flex h-full grow flex-col">
@@ -74,7 +74,7 @@ function Products() {
             )}
 
             <ProductGrid products={allProducts} filters={filters} />
-            <Footer />
+      
           </div>
         </div>
       </div>

@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom';
 const categories = [
     {
     id: 3,
-    title: "Bracelets ˚⊹♡",
-    imageUrl: "https://i.postimg.cc/3xDtjrHL/image.png",
-    link: "Bracelets"
+    title: "Jhumkas ˚⊹♡",
+    imageUrl: "https://pbs.twimg.com/media/G0K1Lcda0AAXBGm?format=jpg&name=small",
+    link: "Jhumkas"
   },
   {
     id: 1,
-    title: "Phone charms ⋆｡𖦹°",
-    imageUrl: "https://i.postimg.cc/T3mcLkrF/image.png",
-      link: "Phone charms",
+    title: "Stainless steel pendants ⋆｡𖦹°",
+    imageUrl: "https://pbs.twimg.com/media/G0K1NaLXEAANi9u?format=jpg&name=small",
+      link: "Stainless steel pendantss",
   },
 
 
@@ -23,21 +23,45 @@ const categories = [
   // },
       {
     id: 2,
-    title: "keychains ˚⋆𐙚｡",
-    imageUrl: "https://i.postimg.cc/J0zyNQGb/image.png",
-      link: "keychains"
+    title: "Watch Bundles ˚⋆𐙚｡",
+    imageUrl: "https://pbs.twimg.com/media/G0K1PH_bUAQPppe?format=jpg&name=small",
+      link: "Watch Bundles"
   },
       {
     id: 5,
-    title: "Necklaces ｡°✩",
-    imageUrl:"https://i.postimg.cc/NGST66fc/image.png",
-     link: "Necklaces"
+    title: "Jewellery bouquets ｡°✩",
+    imageUrl:"https://pbs.twimg.com/media/G0K1QljW4AACFWP?format=jpg&name=small",
+     link: "Jewellery bouquets"
   },
         {
     id: 5,
-    title: "Plushies / Trinkets ⋆⭒˚.⋆",
-    imageUrl:"https://pbs.twimg.com/media/G0KwgFzWsAEX2Gn?format=png&name=small",
-     link: "Plushies"
+    title: "Stainless steel earings ⋆⭒˚.⋆",
+    imageUrl:"https://pbs.twimg.com/media/G0K1_VtagAAJbnb?format=jpg&name=small",
+     link: "Stainless steel earings"
+  },
+          {
+    id: 5,
+    title: "Bundles ⋆⭒˚.⋆",
+    imageUrl:"https://pbs.twimg.com/media/G0K2ArjbUAU8gq5?format=jpg&name=small",
+     link: "Bundles"
+  },
+            {
+    id: 5,
+    title: "Stainless steel bracelets⋆⭒˚.⋆",
+    imageUrl:"https://pbs.twimg.com/media/G0K2DhLa0AAgy2V?format=jpg&name=small",
+     link: "Stainless steel bracelets"
+  },
+              {
+    id: 5,
+    title: "Stainless steel rings⋆⭒˚.⋆",
+    imageUrl:"https://pbs.twimg.com/media/G0K2H3hbUAMT4gm?format=jpg&name=small",
+     link: "Stainless steel rings"
+  },
+                {
+    id: 5,
+    title: "Customised orders⋆⭒˚.⋆",
+    imageUrl:"https://pbs.twimg.com/media/G0K3EEXbUAYqjFv?format=jpg&name=small",
+     link: "Customised orders"
   },
   //       {
   //   id: 6,

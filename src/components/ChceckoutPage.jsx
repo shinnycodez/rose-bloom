@@ -69,8 +69,21 @@ const CheckoutPage = () => {
     return () => window.removeEventListener('storage', handleStorageChange);
   }, []);
 
+  // Function to calculate shipping cost based on city
+  const getShippingCost = () => {
+    if (!form.city) return 280; // Default to higher cost if no city selected
+    
+    const city = form.city.toLowerCase().trim();
+    const twinCities = ['rawalpindi', 'islamabad'];
+    
+    if (twinCities.includes(city)) {
+      return 220;
+    }
+    return 280;
+  };
+
   const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const shippingCost = 230;
+  const shippingCost = getShippingCost();
   const total = subtotal + shippingCost;
 
   const handleChange = (e) => {
@@ -213,7 +226,7 @@ const CheckoutPage = () => {
     return (
       <>
         <Header />
-        <div className="min-h-screen bg-[#FFF5EE] py-8 px-4 sm:px-6 lg:px-8">
+        <div className="min-h-screen bg-[#F3D0D7] py-8 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center py-16">
               <h1 className="text-3xl font-bold text-gray-900 mb-4">Your Cart is Empty</h1>
@@ -234,7 +247,7 @@ const CheckoutPage = () => {
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-[#FFF5EE] py-8 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen bg-[#F3D0D7] py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Breadcrumbs */}
           <nav className="flex mb-8" aria-label="Breadcrumb">
@@ -314,9 +327,19 @@ const CheckoutPage = () => {
                       name="city"
                       value={form.city}
                       onChange={handleChange}
+                      placeholder="e.g. Rawalpindi, Islamabad, Lahore"
                       className={`w-full px-4 py-2 border ${errors.city ? 'border-red-500' : 'border-gray-300'} rounded-md focus:ring-black focus:border-black`}
                     />
                     {errors.city && <p className="mt-1 text-sm text-red-600">{errors.city}</p>}
+                    {form.city && (
+                      <p className="mt-1 text-xs text-gray-500">
+                        Shipping cost: PKR {getShippingCost()} 
+                        {['rawalpindi', 'islamabad'].includes(form.city.toLowerCase().trim()) 
+                          ? ' (Twin cities rate)' 
+                          : ' (Other cities rate)'
+                        }
+                      </p>
+                    )}
                   </div>
 
                   <div>
@@ -374,7 +397,11 @@ const CheckoutPage = () => {
                   <div className="ml-3">
                     <p className="font-medium text-gray-900">Standard Delivery</p>
                     <p className="text-sm text-gray-500">
-                      PKR 230 - Delivery in 4-5 business days
+                      PKR {shippingCost} - Delivery in 4-5 business days
+                      {form.city && ['rawalpindi', 'islamabad'].includes(form.city.toLowerCase().trim()) 
+                        ? ' (Twin cities)' 
+                        : form.city ? ' (Other cities)' : ''
+                      }
                     </p>
                   </div>
                 </label>
@@ -405,8 +432,8 @@ const CheckoutPage = () => {
                     Please transfer the total amount of PKR {total.toLocaleString()} to our EasyPaisa account:
                   </p>
                   <ul className="list-disc list-inside text-gray-800 text-sm sm:text-base mb-4">
-                     <li><strong>Account Name:</strong> Maham </li>
-                    <li><strong>EasyPaisa Number:</strong> 03105816903</li>
+                     <li><strong>Account Name:</strong> Areeba Areej </li>
+                    <li><strong>EasyPaisa Number:</strong> 03305089910</li>
                   </ul>
                   <p className="text-gray-700 text-sm sm:text-base mb-4">
                     After making the transfer, please upload a screenshot of the transaction as proof of payment.
@@ -520,7 +547,17 @@ const CheckoutPage = () => {
                 </div>
 
                 <div className="flex justify-between">
-                  <span className="text-sm text-gray-600">Shipping</span>
+                  <span className="text-sm text-gray-600">
+                    Shipping
+                    {form.city && (
+                      <span className="text-xs text-gray-500 block">
+                        {['rawalpindi', 'islamabad'].includes(form.city.toLowerCase().trim()) 
+                          ? '(Twin cities rate)' 
+                          : '(Other cities rate)'
+                        }
+                      </span>
+                    )}
+                  </span>
                   <span className="text-sm">PKR {shippingCost.toLocaleString()}</span>
                 </div>
 
@@ -559,7 +596,6 @@ const CheckoutPage = () => {
 
               <div className="mt-6 text-center text-xs sm:text-sm text-gray-500">
                 <p>100% secure checkout</p>
-
               </div>
             </div>
           </div>
