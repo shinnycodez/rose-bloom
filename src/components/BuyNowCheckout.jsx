@@ -440,8 +440,8 @@ const BuyNowCheckout = () => {
               {form.paymentMethod === 'EasyPaisa' && (
                 <div className="mt-6 p-4 border border-blue-300 bg-blue-50 rounded-md">
                   <h3 className="text-base sm:text-lg font-semibold mb-3">EasyPaisa Payment Details</h3>
-                  <p className="text-gray-700 mb-4 text-sm sm:text-base">
-                    Please send the total amount of PKR {total.toLocaleString()} to our EasyPaisa account:
+                  <p className="text-gray-700 text-sm sm:text-base mb-4">
+                    Please transfer the total amount of PKR {subtotal.toLocaleString()} to our EasyPaisa account, while rest of the delivery charges amount of {shippingCost.toLocaleString()} is to be paid to the rider on delivery
                   </p>
                   <ul className="list-disc list-inside text-gray-800 mb-4 text-sm sm:text-base">
                     <li><strong>Account Name:</strong> Areeba Areej </li>

@@ -429,7 +429,7 @@ const CheckoutPage = () => {
                 <div className="mt-6 p-4 border border-blue-300 bg-blue-50 rounded-md">
                   <h3 className="text-base sm:text-lg font-semibold mb-3">EasyPaisa Transfer Details</h3>
                   <p className="text-gray-700 text-sm sm:text-base mb-4">
-                    Please transfer the total amount of PKR {total.toLocaleString()} to our EasyPaisa account:
+                    Please transfer the total amount of PKR {subtotal.toLocaleString()} to our EasyPaisa account, while rest of the delivery charges amount of {shippingCost.toLocaleString()} is to be paid to the rider on delivery
                   </p>
                   <ul className="list-disc list-inside text-gray-800 text-sm sm:text-base mb-4">
                      <li><strong>Account Name:</strong> Areeba Areej </li>
