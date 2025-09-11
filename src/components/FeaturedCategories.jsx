@@ -21,29 +21,12 @@ const categories = [
   //   title: "Bookmarks",
   //   imageUrl: "https://scontent.flhe7-2.fna.fbcdn.net/v/t1.15752-9/520429125_1334742338219253_2531984894124566733_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=103&ccb=1-7&_nc_sid=0024fc&_nc_ohc=j7XYMWWmVY8Q7kNvwFYLOQX&_nc_oc=Adkef7qEPDIiflArvyMlAj0FTg2JoPnp6bRd6DV5GSZcJB7m97b8m8ZRWL8id8lVe1k&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.flhe7-2.fna&oh=03_Q7cD2wF-rY8Fqy79pbeR3ML53F8zqAW-4GruhgPAjdrVNB5Twg&oe=68AC16BF"
   // },
-      {
-    id: 2,
-    title: "Watch Bundles ˚⋆𐙚｡",
-    imageUrl: "https://pbs.twimg.com/media/G0K1PH_bUAQPppe?format=jpg&name=small",
-      link: "Watch Bundles"
-  },
-      {
-    id: 5,
-    title: "Jewellery bouquets ｡°✩",
-    imageUrl:"https://pbs.twimg.com/media/G0K1QljW4AACFWP?format=jpg&name=small",
-     link: "Jewellery bouquets"
-  },
+
         {
     id: 5,
     title: "Stainless steel earings ⋆⭒˚.⋆",
     imageUrl:"https://pbs.twimg.com/media/G0K1_VtagAAJbnb?format=jpg&name=small",
      link: "Stainless steel earings"
-  },
-          {
-    id: 5,
-    title: "Bundles ⋆⭒˚.⋆",
-    imageUrl:"https://pbs.twimg.com/media/G0K2ArjbUAU8gq5?format=jpg&name=small",
-     link: "Bundles"
   },
             {
     id: 5,
@@ -57,11 +40,41 @@ const categories = [
     imageUrl:"https://pbs.twimg.com/media/G0K2H3hbUAMT4gm?format=jpg&name=small",
      link: "Stainless steel rings"
   },
-                {
+            {
     id: 5,
+    title: "Bundles ⋆⭒˚.⋆",
+    imageUrl:"https://pbs.twimg.com/media/G0K2ArjbUAU8gq5?format=jpg&name=small",
+     link: "Bundles"
+  },
+                {
+    id: 9,
     title: "Customised orders⋆⭒˚.⋆",
     imageUrl:"https://pbs.twimg.com/media/G0K3EEXbUAYqjFv?format=jpg&name=small",
      link: "Customised orders"
+  },
+        {
+    id: 2,
+    title: "Watch Bundles ˚⋆𐙚｡",
+    imageUrl: "https://pbs.twimg.com/media/G0K1PH_bUAQPppe?format=jpg&name=small",
+      link: "Watch Bundles"
+  },
+      {
+    id: 5,
+    title: "Jewellery bouquets ｡°✩",
+    imageUrl:"https://pbs.twimg.com/media/G0K1QljW4AACFWP?format=jpg&name=small",
+     link: "Jewellery bouquets"
+  },
+        {
+    id: 5,
+    title: "Organisers ｡°✩",
+    imageUrl:"https://pbs.twimg.com/media/G0kvOU2X0AAYrlM?format=jpg&name=small",
+     link: "Organisers"
+  },
+          {
+    id: 5,
+    title: "Packing materials ｡°✩",
+    imageUrl:"https://pbs.twimg.com/media/G0kvP0OXgAA_3yG?format=jpg&name=900x900",
+     link: "Packing materials"
   },
   //       {
   //   id: 6,

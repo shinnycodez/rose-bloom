@@ -434,17 +434,7 @@ const BuyNowCheckout = () => {
                 </label>
 
                 {/* Cash on Delivery (COD) Option */}
-                <label className="flex items-center p-4 border rounded-md hover:border-black cursor-pointer">
-                  <input
-                    type="radio"
-                    name="paymentMethod"
-                    value="Cash on Delivery"
-                    checked={form.paymentMethod === 'Cash on Delivery'}
-                    onChange={handleChange}
-                    className="h-4 w-4 text-black focus:ring-black border-gray-300"
-                  />
-                  <span className="ml-3 font-medium text-gray-900 text-sm sm:text-base">Cash on Delivery</span>
-                </label>
+
               </div>
 
               {form.paymentMethod === 'EasyPaisa' && (
