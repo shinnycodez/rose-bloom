@@ -11,6 +11,9 @@ import CheckoutPage from "./components/ChceckoutPage";
 import BuyNowCheckout from "./components/BuyNowCheckout";
 import OrderThankYou from "./components/OrderThankYou";
 
+// List of authorized admin emails
+const ADMIN_EMAILS = ["mueezimran1@gmail.com", "areebahareeg6@gmail.com"];
+
 function App() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -31,6 +34,9 @@ function App() {
 
     return () => unsubscribe();
   }, []);
+
+  // Check if current user is an admin
+  const isAdmin = user && ADMIN_EMAILS.includes(user.email);
 
   if (loading) return <LoadingSpinner />;
 
@@ -53,12 +59,21 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/product/:id" element={<ProductPage />} />
         <Route path="/buynowcheckout" element={<BuyNowCheckout />} />
-        <Route path="/admin" element={<AdminPortal />} />
-       <Route path="/checkout" element={<CheckoutPage />} />
-<Route path="/thanks" element={<OrderThankYou />} />
-        {/* Protected Route */}
+        <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="/thanks" element={<OrderThankYou />} />
         
-
+        {/* Protected Admin Route - only accessible by authorized emails */}
+        <Route 
+          path="/admin" 
+          element={
+            isAdmin ? (
+              <AdminPortal />
+            ) : (
+              <Navigate to={user ? "/" : "/login"} replace />
+            )
+          } 
+        />
+        
         {/* Fallback Route */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
