@@ -48,17 +48,17 @@ const BuyNowCheckout = () => {
 
   // Calculate shipping cost based on city
   const getShippingCost = (city) => {
-    if (!city) return 280; // Default to higher rate if no city selected
+    if (!city) return 320; // Default to higher rate if no city selected
     
     const cityLower = city.toLowerCase().trim();
     
     // Rawalpindi and Islamabad get lower shipping rate
     if (cityLower === 'rawalpindi' || cityLower === 'islamabad') {
-      return 220;
+      return 300;
     }
     
     // Rest of Pakistan
-    return 280;
+    return 320;
   };
 
   const subtotal = cartItems.reduce((sum, item) => sum + item.price * (item.quantity || 1), 0);
