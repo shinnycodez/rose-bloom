@@ -71,15 +71,15 @@ const CheckoutPage = () => {
 
   // Function to calculate shipping cost based on city
   const getShippingCost = () => {
-    if (!form.city) return 280; // Default to higher cost if no city selected
+    if (!form.city) return 320; // Default to higher cost if no city selected
     
     const city = form.city.toLowerCase().trim();
     const twinCities = ['rawalpindi', 'islamabad'];
     
     if (twinCities.includes(city)) {
-      return 220;
+      return 300;
     }
-    return 280;
+    return 320;
   };
 
   const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
